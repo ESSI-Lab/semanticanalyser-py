@@ -8,7 +8,7 @@ class Matchtype:
     return self.type
 
   def set_type(self, type):
-    self.type = type
+    self.type =   type
 
 
 class MatchProperty:
