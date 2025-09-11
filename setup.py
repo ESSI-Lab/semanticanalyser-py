@@ -16,7 +16,7 @@ setup(
         'requests>=2.25.0',
     ],
     include_package_data=True,
-    license='MIT',
+    license='GPL-3.0',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3 :: Only',
@@ -26,15 +26,15 @@ setup(
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
         'Programming Language :: Python :: 3.13',
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: GPL-3.0 license',
         'Operating System :: OS Independent',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries',
     ],
     python_requires='>=3.8',
     project_urls={
-        'Homepage': 'https://example.com/semantic_analyzer',
-        'Source': 'https://example.com/semantic_analyzer/source',
-        'Tracker': 'https://example.com/semantic_analyzer/issues',
+        'Homepage': 'https://github.com/ESSI-Lab/semanticanalyser-py',
+        'Source': 'https://github.com/ESSI-Lab/semanticanalyser-py',
+        'Tracker': 'https://github.com/ESSI-Lab/semanticanalyser-py/issues',
     },
 )
