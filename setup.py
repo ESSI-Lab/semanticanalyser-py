@@ -9,8 +9,10 @@ setup(
     description='A package for semantic analysis using the BODC API',
     long_description=readme,
     long_description_content_type='text/markdown',
-    author='Your Name',
-    author_email='your.email@example.com',
+    author='Ahmad Mahmoud (CNR internship)',
+    author_email='ahmad.mahmoud@edu.unifi.it',
+    maintainer="CNR-IIA Sede di Firenze",
+    maintainer_email="sede.firenze@iia.cnr.it",
     packages=find_packages(exclude=('tests', 'test*', 'examples', 'docs')),
     install_requires=[
         'requests>=2.25.0',
