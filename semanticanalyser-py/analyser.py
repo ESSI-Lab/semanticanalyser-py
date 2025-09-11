@@ -150,7 +150,7 @@ class SemanticAnalyzer:
       return None
 
   def analyzeTerms(self, terms: list[str], matchTypes: list[Matchtype], matchProperties: list[MatchProperty]):
-    payload = {
+    payload = {   
         "terms": terms,
         "matchTypes": [mt.get_type() for mt in matchTypes],
         "matchProperties": [mp.get_property() for mp in matchProperties]
