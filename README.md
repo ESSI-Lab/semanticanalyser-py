@@ -1,9 +1,11 @@
 # semanticanalyser-py
-A lightweight Python client for the BODC Semantic Analyser API. It helps you discover controlled vocabularies, explore categories, match types and properties, and run term analysis to resolve terms to canonical concepts (with codes and URIs) across BODC vocabularies.
+A lightweight Python client for the BODC Semantic Analyser API. It helps you discover controlled vocabularies, explore categories, match types and properties, and run term analysis to resolve terms to canonical concepts (with codes and URIs) across marine community vocabularies, including BODC NVS.
+
+The project is authored by Ahmad Mahmoud during his internship at CNR-IIA. 
 
 ## Key features
-- Retrieve semantic categories available from the BODC service
-- List vocabularies within a category
+- Retrieve semantic categories
+- List supported vocabularies
 - Discover supported match types and match properties
 - Analyse free-text terms and obtain matched concepts, codes, and vocabularies
 - Simple, Pythonic API with minimal dependencies
@@ -57,9 +59,8 @@ if analysis:
         )
 ```
 ## When to use this library
-- You need to map free-text terms to standardised BODC concepts and codes
-- You want to build tools that browse or integrate with BODC controlled vocabularies
-- You’re enriching datasets with semantic metadata (URIs, codes, vocabularies)
+- You need to map free-text terms to standardised concepts and codes
+- You’re enriching marine dataset descriptions with semantic metadata (URIs, codes, vocabularies)
 
 ## Configuration
 - Endpoint: By default, the client targets the public BODC Semantic Analyser API. You can override the endpoint:
@@ -75,12 +76,9 @@ if analysis:
 - Robust pagination and retry logic
 - Additional helpers for filtering results
 - CLI utilities
-- Async support
 
 ## Contributing
-Issues and pull requests are welcome. Please:
-- Keep changes small and well-documented
-- Include tests where practical
-- Follow conventional commit messages where possible
+Issues and pull requests are welcome.
 
 ## License
+GNU GPL-3.0
