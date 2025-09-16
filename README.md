@@ -20,9 +20,9 @@ pip install semanticanalyser-py
 
 ``` python
 # Basic usage example
-from analyser import SemanticAnalyzer, Matchtype, MatchProperty
+from analyser import SemanticAnalyser, Matchtype, MatchProperty
 
-analyser = SemanticAnalyzer()  # uses the public BODC endpoint by default
+analyser = SemanticAnalyser()  # uses the public BODC endpoint by default
 
 # Explore categories
 categories = analyser.get_categories()
@@ -44,7 +44,7 @@ terms = ["dissolved oxygen", "chlorophyll a"]
 
 # Optionally filter or construct match types/properties
 # (example below demonstrates using them as returned)
-analysis = analyser.analyzeTerms(
+analysis = analyser.analyseTerms(
     terms=terms,
     matchTypes=match_types,
     matchProperties=match_props
@@ -68,8 +68,8 @@ if analysis:
 ## Configuration
 - Endpoint: By default, the client targets the public BODC Semantic Analyser API. You can override the endpoint:
 ``` python
-  from analyser import SemanticAnalyzer
-  analyser = SemanticAnalyzer(endpoint="https://semantics.bodc.ac.uk/api")
+  from analyser import SemanticAnalyser
+  analyser = SemanticAnalyser(endpoint="https://semantics.bodc.ac.uk/api")
 ```
 ## Requirements
 - Python: 3.8 or newer

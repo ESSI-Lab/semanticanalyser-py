@@ -1,11 +1,12 @@
 from semanticanalyser.analyser import *
+from semanticanalyser.analyser import SemanticAnalyser
 
-analyzer = SemanticAnalyzer()
-match_types = analyzer.getMatchTypes()
-match_properties = analyzer.getMatchProperties()
-match_categories = analyzer.get_categories()
+analyser = SemanticAnalyser()
+match_types = analyser.getMatchTypes()
+match_properties = analyser.getMatchProperties()
+match_categories = analyser.get_categories()
 categories_list = [category['name'] for category in match_categories]
-match_vocabularies = analyzer.get_vocabularies(categories_list[1])
+match_vocabularies = analyser.get_vocabularies(categories_list[1])
 
 print("Match Types:")
 if match_types:

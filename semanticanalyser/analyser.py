@@ -62,7 +62,7 @@ class Vocabularies:
 
 
 
-class SemanticAnalyzer:
+class SemanticAnalyser:
   def __init__(self, endpoint="https://semantics.bodc.ac.uk/api"):
     self.endpoint = endpoint
 
@@ -150,7 +150,7 @@ class SemanticAnalyzer:
       print(f"Error fetching match properties: {e}")
       return None
 
-  def analyzeTerms(self, terms: list[str], matchTypes: list[Matchtype], matchProperties: list[MatchProperty]):
+  def analyseTerms(self, terms: list[str], matchTypes: list[Matchtype], matchProperties: list[MatchProperty]):
     payload = {
         "terms": terms,
         "matchTypes": [mt.get_type() for mt in matchTypes],
