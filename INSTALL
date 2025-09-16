@@ -1,0 +1,11 @@
+To activate a py environment:
+
+source py3/bin/activate
+
+To build:
+
+python -m build
+
+To push to pip:
+
+twine upload dist/semanticanalyser_py-0.1.x*

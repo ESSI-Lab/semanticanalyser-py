@@ -6,3 +6,7 @@ test.py
 test.py
 semanticanalyser/analyser.py
 semanticanalyser/analyser.py
+/dist/
+/semanticanalyser_py.egg-info/
+/.project
+/.pydevproject

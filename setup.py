@@ -5,7 +5,7 @@ readme = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
 
 setup(
     name='semanticanalyser-py',
-    version='0.1.0',
+    version='0.1.4',
     description='A Python binding for the Semantic Analyser service maintained by BODC',
     long_description=readme,
     long_description_content_type='text/markdown',
@@ -15,7 +15,7 @@ setup(
     maintainer_email="sede.firenze@iia.cnr.it",
     packages=find_packages(exclude=('tests', 'test*', 'examples', 'docs')),
     install_requires=[
-        'requests>=2.25.0',
+        'requests>=2.25.0'
     ],
     include_package_data=True,
     license='GPL-3.0',
@@ -28,7 +28,6 @@ setup(
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
         'Programming Language :: Python :: 3.13',
-        'License :: OSI Approved :: GPL-3.0 license',
         'Operating System :: OS Independent',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries',
