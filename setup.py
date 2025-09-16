@@ -5,7 +5,7 @@ readme = (Path(__file__).parent / "README.md").read_text(encoding="utf-8")
 
 setup(
     name='semanticanalyser-py',
-    version='0.1.4',
+    version='0.1.5',
     description='A Python binding for the Semantic Analyser service maintained by BODC',
     long_description=readme,
     long_description_content_type='text/markdown',
