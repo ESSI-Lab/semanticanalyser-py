@@ -3,6 +3,10 @@ A lightweight Python client for the BODC Semantic Analyser API. It helps you dis
 
 The project is authored by Ahmad Mahmoud during his internship at CNR-IIA. 
 
+BODC Semantic Analyser homepage: https://semantics.bodc.ac.uk/
+
+BODC Semantic Analyser reference: https://editoria.ingv.it/miscellanea/2024/miscellanea80/
+
 ## Key features
 - Retrieve semantic categories
 - List supported vocabularies
