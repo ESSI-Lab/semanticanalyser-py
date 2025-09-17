@@ -11,6 +11,9 @@ class Matchtype:
   def set_type(self, type):
     self.type =   type
 
+  def __str__(self):
+    return self.type
+
 
 class MatchProperty:
   def __init__(self, property):
@@ -22,14 +25,18 @@ class MatchProperty:
   def set_property(self, property):
     self.property = property
 
+  def __str__(self):
+      return self.property
+
 class Match:
-    def __init__(self, matching_term, match_property, match_type, term_code, vocabulary, concept_uri):
+    def __init__(self, matching_term, match_property, match_type, term_code, vocabulary, concept_uri, category):
         self._matching_term = matching_term
         self._match_property = match_property
         self._match_type = match_type
         self._term_code = term_code
         self._vocabulary = vocabulary
         self._concept_uri = concept_uri
+        self._category = category
 
     def getMatchingTerm(self):
         return self._matching_term
@@ -39,6 +46,9 @@ class Match:
 
     def getMatchType(self):
         return self._match_type
+
+    def getCategory(self):
+        return self._category
 
     def getTermCode(self):
         return self._term_code
@@ -150,12 +160,32 @@ class SemanticAnalyser:
       print(f"Error fetching match properties: {e}")
       return None
 
-  def analyseTerms(self, terms: list[str], matchTypes: list[Matchtype], matchProperties: list[MatchProperty]):
+  def analyseTermsWithoutCategory(self, terms: list[str], matchTypes: list[Matchtype], matchProperties: list[MatchProperty]):
+      return self.analyseTerms(terms, matchTypes, matchProperties, None)
+
+  def analyseTerms(self, terms: list[str], matchTypes: list[Matchtype], matchProperties: list[MatchProperty], category):
+
+    print("Analyse terms called with the following parameters: ")
+
+    print("Terms: ", terms)
+    print("Match Types: ")
+    for mt in matchTypes:
+        print(mt)
+    print("Match properties: ")
+    for mp in matchProperties:
+        print(mp)
+    if (category is not None):
+        print("Category: "+category)
+
+
     payload = {
         "terms": terms,
         "matchTypes": [mt.get_type() for mt in matchTypes],
         "matchProperties": [mp.get_property() for mp in matchProperties]
     }
+    if category is not None:
+      payload["category"] = category
+
     headers = {'Content-Type': 'application/json'}
 
     try:
@@ -187,10 +217,27 @@ class SemanticAnalysisResponse:
                   for result_item in graph_item['result']:
                       matching_term = graph_item.get('query', 'N/A')
                       match_property = result_item.get('matchProperty', 'N/A')
+                      category = result_item.get('additionalType')
                       match_type = result_item.get('matchType', 'N/A')
                       term_code = result_item.get('termCode', 'N/A')
                       vocabulary = result_item.get('inDefinedTermSet', 'N/A')
                       concept_uri = result_item.get('@id', 'N/A')
-                      match = Match(matching_term, match_property, match_type, term_code, vocabulary, concept_uri)
+                      match = Match(matching_term, match_property, match_type, term_code, vocabulary, concept_uri, category)
                       matches.append(match)
       return matches
+
+  def to_string(self):
+      matches = self.get_matches()
+      ret = ""
+      if matches:
+          # Print details for each match
+          for match in matches:
+              ret = ret + "  Matching Term: "+match.getMatchingTerm()+"\n"
+              ret = ret + "  Match Property: "+match.getMatchProperty()+"\n"
+              ret = ret + "  Match Type: "+match.getMatchType()+"\n"
+              ret = ret + "  Category: " + match.getCategory() + "\n"
+              ret = ret + "  Term Code: "+match.getTermCode()+"\n"
+              ret = ret + "  Vocabulary: "+match.getVocabulary()+"\n"
+              ret = ret + "  Concept URI: "+match.getConceptURI()+"\n"
+              ret = ret + "  - \n"
+      return ret
