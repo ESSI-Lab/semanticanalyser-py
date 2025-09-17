@@ -16,7 +16,7 @@ pip install semanticanalyser-py
 ```
 ## Quick start
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ESSI-Lab/semanticanalyser-py/blob/main/semanticanalyser_py_demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ESSI-Lab/semanticanalyser-py/blob/main/semantic_analyser_py_demo.ipynb)
 
 ``` python
 # Basic usage example
