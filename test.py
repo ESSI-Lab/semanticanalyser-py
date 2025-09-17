@@ -40,6 +40,7 @@ else:
   print("Could not retrieve vocabularies.")
 
 
-response = analyser.analyseTermsWithoutCategory(["mooring"], match_types, match_properties)
+
+response = analyser.analyseTerms(["mooring"], match_types, match_properties, "platform")
 
 print(response.to_string())
