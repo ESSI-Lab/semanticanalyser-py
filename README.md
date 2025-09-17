@@ -1,5 +1,5 @@
 # semanticanalyser-py
-A lightweight Python client for the BODC Semantic Analyser API. It helps you discover controlled vocabularies, explore categories, match types and properties, and run term analysis to resolve terms to canonical concepts (with codes and URIs) across marine community vocabularies, including BODC NVS.
+A lightweight Python client for the BODC Semantic Analyser API. It enables a Python developer to access Semantic Analyser functionalities, including the discovery of controlled vocabularies, exploration of available categories, match types and properties, and execution of term analysis to resolve terms to canonical concepts (with codes and URIs) across marine community vocabularies, including BODC NVS.
 
 The project is authored by Ahmad Mahmoud during his internship at CNR-IIA. 
 
