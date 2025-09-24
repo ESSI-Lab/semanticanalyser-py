@@ -10,3 +10,4 @@ semanticanalyser/analyser.py
 /semanticanalyser_py.egg-info/
 /.project
 /.pydevproject
+/venv/
