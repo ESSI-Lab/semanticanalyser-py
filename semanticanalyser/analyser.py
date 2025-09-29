@@ -165,17 +165,8 @@ class SemanticAnalyser:
 
   def analyseTerms(self, terms: list[str], matchTypes: list[Matchtype], matchProperties: list[MatchProperty], category):
 
-    print("Analyse terms called with the following parameters: ")
-
-    print("Terms: ", terms)
-    print("Match Types: ")
-    for mt in matchTypes:
-        print(mt)
-    print("Match properties: ")
-    for mp in matchProperties:
-        print(mp)
-    if (category is not None):
-        print("Category: "+category)
+    print("Matching for the selected term: ")
+    print()
 
 
     payload = {
@@ -228,16 +219,21 @@ class SemanticAnalysisResponse:
 
   def to_string(self):
       matches = self.get_matches()
-      ret = ""
+      ret = "<div>" # Start with a main container div
       if matches:
           # Print details for each match
           for match in matches:
-              ret = ret + "  Matching Term: "+match.getMatchingTerm()+"\n"
-              ret = ret + "  Match Property: "+match.getMatchProperty()+"\n"
-              ret = ret + "  Match Type: "+match.getMatchType()+"\n"
-              ret = ret + "  Category: " + match.getCategory() + "\n"
-              ret = ret + "  Term Code: "+match.getTermCode()+"\n"
-              ret = ret + "  Vocabulary: "+match.getVocabulary()+"\n"
-              ret = ret + "  Concept URI: "+match.getConceptURI()+"\n"
-              ret = ret + "  - \n"
+              ret += f"<h3>Matching Term: {match.getMatchingTerm()}</h3>"
+              ret += "<ul>"
+              ret += f"<li>Match Property: {match.getMatchProperty()}</li>"
+              ret += f"<li>Match Type: {match.getMatchType()}</li>"
+              ret += f"<li>Category: {match.getCategory()}</li>"
+              ret += f"<li>Term Code: {match.getTermCode()}</li>"
+              ret += f"<li>Vocabulary: <a href='{match.getVocabulary()}' target='_blank'>{match.getVocabulary()}</a></li>" # Made vocabulary a link
+              ret += f"<li>Concept URI: <a href='{match.getConceptURI()}' target='_blank'>{match.getConceptURI()}</a></li>"
+              ret += "</ul>"
+              ret += "<hr>" # Add a horizontal rule between matches
+      else:
+          ret += "<p>No semantic analysis matches found.</p>" # Message when no matches are found
+      ret += "</div>" # Close the main container div
       return ret

@@ -41,6 +41,6 @@ else:
 
 
 
-response = analyser.analyseTerms(["mooring"], match_types, match_properties, "platform")
+response = analyser.analyseTerms(["454 GS FLX"], match_types, match_properties, "instrument")
 
 print(response.to_string())
