@@ -4,6 +4,8 @@ source py3/bin/activate / deactivate
 
 To build:
 
+update version in setup.py
+
 python -m build
 
 To push to pip:
